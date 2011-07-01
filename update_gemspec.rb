@@ -10,7 +10,7 @@ if ARGV.first != nil
   new_version = ARGV.first
 end
 
-file = File.new("vcfruby.gemspec")
+file = File.new("vcf.gemspec")
 lines = file.readlines.map{|x| x.chomp}
 
 for line in lines
