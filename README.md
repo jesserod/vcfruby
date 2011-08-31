@@ -20,7 +20,7 @@ To print the XT:A tag of each entry, you might do this:
 
 You can do something similar with a one-liner at the command line
 
-    cat test.vcf | ruby -r vcf -ne 'next if $_[0] == "@"; puts Vcf.new($_).info["DP"]' 
+    cat test.vcf | ruby -r vcf -ne 'next if $_[0] == "#"; puts Vcf.new($_).info["DP"]' 
 
 You can also use the `parse_line` method to reuse the same Vcf object
 
