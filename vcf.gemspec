@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'vcf'
-  s.version     = '0.0.2'
-  s.date        = 2011-7-1
+  s.version     = '0.0.3'
+  s.date        = 2011-3-31
   s.summary     = "VCF (Variant Call Format) interface for ruby"
   s.description = "Lightweight VCF (Variant Call Format) interface for ruby"
   s.authors     = ["Jesse Rodriguez"]
