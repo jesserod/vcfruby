@@ -13,6 +13,8 @@ public
   end
 
   def parse_line(line, sample_names=nil)
+    return false if line[0] == '#'
+
     f = line.chomp.split("\t", -1)
     raise "VCF lines must have at least 8 fields" if f.size < 8
     @chrom = f[0]
