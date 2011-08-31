@@ -8,6 +8,10 @@ public
     parse_line(line, sample_names) if line != nil
   end
 
+  def int_or_raw(x)
+    Integer.new(x) rescue x
+  end
+
   def parse_line(line, sample_names=nil)
     f = line.chomp.split("\t", -1)
     raise "VCF lines must have at least 8 fields" if f.size < 8
@@ -16,7 +20,7 @@ public
     @id = f[2]
     @ref = f[3]
     @alt = f[4]
-    @qual = f[5].to_i
+    @qual = int_or_raw(f[5])
     @filter = f[6]
 
     @info = {}
