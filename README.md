@@ -1,7 +1,7 @@
 Overview
 ============
 
-This gem provides a lightweight class, `Vcf`, which can be used to parse SAM files by giving it one SAM line at a time.
+This gem provides a lightweight class, `Vcf`, which can be used to parse VCF files by giving it one VCF line at a time.
 
 To install, just install the `vcf` gem:
 
@@ -14,22 +14,22 @@ To print the XT:A tag of each entry, you might do this:
     require 'vcf'
 
     for line in gets
-      next if line[0] == "@" # Skip header if it exists
-      puts Vcf.new(line).tags["XT:A"]
+      next if line[0] == "#" # Skip header if it exists
+      puts Vcf.new(line).info["DP"]
     end
 
 You can do something similar with a one-liner at the command line
 
-    cat test.sam | ruby -r sam -ne 'next if $_[0] == "@"; puts Vcf.new($_).tags["XT:A"]' 
+    cat test.vcf | ruby -r vcf -ne 'next if $_[0] == "@"; puts Vcf.new($_).info["DP"]' 
 
 You can also use the `parse_line` method to reuse the same Vcf object
 
     require 'vcf'
-    s = Vcf.new
+    v = Vcf.new
 
     for line in gets
-      if s.parse_line(line) # Returns false if line starts with @ (a header line)
-        puts s.tags["XT:A"]
+      if v.parse_line(line) # Returns false if line starts with # (a header line)
+        puts v.info["DP"]
       end
     end
 
