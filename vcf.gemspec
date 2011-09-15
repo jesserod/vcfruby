@@ -7,5 +7,5 @@ Gem::Specification.new do |s|
   s.authors     = ["Jesse Rodriguez"]
   s.email       = 'jesserod@cs.stanford.edu'
   s.files       = ["lib/vcf.rb"]
-  s.homepage    = 'http://rubygems.org/gems/vcf'
+  s.homepage    = 'https://github.com/jesserod/vcfruby'
 end
