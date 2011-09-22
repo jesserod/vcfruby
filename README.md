@@ -26,6 +26,7 @@ You can do something similar with a one-liner at the command line
 You can also use the `parse_line` method to reuse the same Vcf object
 
     require 'vcf'
+
     v = Vcf.new
 
     for line in gets
