@@ -11,6 +11,7 @@ Usage
 =====
 
 To print the DP (read depth) value of each entry, you might do this:
+
     require 'vcf'
 
     for line in gets
