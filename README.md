@@ -10,7 +10,7 @@ To install, just install the `vcf` gem:
 Usage
 =====
 
-To print the XT:A tag of each entry, you might do this:
+To print the DP (read depth) value of each entry, you might do this:
     require 'vcf'
 
     for line in gets
