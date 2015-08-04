@@ -28,7 +28,7 @@ public
     @info = {}
     info_vec = f[7].split(";")
     info_vec.each do |x|
-      keyval = x.split("=", -1)
+      keyval = x.split("=", 2)
       if keyval.size == 2 # If it's key=value
         @info[keyval[0]] = keyval[1]
       else # Otherwise, it's just a flag
